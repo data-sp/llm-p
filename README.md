@@ -17,6 +17,7 @@ llm_p/
 ├── pyproject.toml                 # Зависимости проекта (uv)
 ├── README.md                      # Описание проекта и запуск
 ├── .env.example                   # Пример переменных окружения
+├── screenshots/                   # Скриншоты демонстрации эндпоинтов
 │
 ├── app/
 │   ├── init.py
@@ -103,6 +104,7 @@ uv pip install -r requirements.txt
 ## Настройка .env
 
 Скопируйте `.env.example` в `.env` и заполните `OPENROUTER_API_KEY`
+Модель заменена на доступную для аккаунта openai/gpt-oss-120b:free 
 
 ## Запуск
 
@@ -129,24 +131,28 @@ All checks passed!
 
 ### 1) Регистрация пользователя
 
-![register]()
+![register](./screenshots/01-register.png)
 
 ### 2) Логин и получение JWT
 
-![login]()
+![login](./screenshots/02-login-token.png)
 
 ### 3) Авторизация через Swagger
 
-![authorize]()
+![authorize](./screenshots/03-authorize.png)
 
 ### 4) POST /chat
 
-![chat-post]()
+![chat-post](./screenshots/04-chat-post.png)
 
 ### 5) GET /chat/history
 
-![chat-history-get]()
+![chat-history-get](./screenshots/05-chat-history-get.png)
 
 ### 6) DELETE /chat/history
 
-![chat-history-delete]()
+![chat-history-delete](./screenshots/06-chat-history-delete.png)
+
+### 7) GET /chat/history после очистки
+
+![chat-history-empty](./screenshots/07-chat-history-empty.png)
