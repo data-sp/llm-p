@@ -13,50 +13,50 @@ FastAPI-сервис с JWT-аутентификацией, SQLite и прокс
 ## Структура проекта
 
 ```text
-llm_p/
+llm-p/
 ├── pyproject.toml                 # Зависимости проекта (uv)
 ├── README.md                      # Описание проекта и запуск
 ├── .env.example                   # Пример переменных окружения
 ├── screenshots/                   # Скриншоты демонстрации эндпоинтов
 │
 ├── app/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── main.py                    # Точка входа FastAPI
 │   │
 │   ├── core/                      # Общие компоненты и инфраструктура
-│   │   ├── init.py
+│   │   ├── __init__.py
 │   │   ├── config.py              # Конфигурация приложения (env → Settings)
 │   │   ├── security.py            # JWT, хеширование паролей
 │   │   └── errors.py              # Доменные исключения
 │   │
 │   ├── db/                        # Слой работы с БД
-│   │   ├── init.py
+│   │   ├── __init__.py
 │   │   ├── base.py                # DeclarativeBase
 │   │   ├── session.py             # Async engine и sessionmaker
 │   │   └── models.py              # ORM-модели (User, ChatMessage)
 │   │
 │   ├── schemas/                   # Pydantic-схемы (вход/выход API)
-│   │   ├── init.py
+│   │   ├── __init__.py
 │   │   ├── auth.py                # Регистрация, логин, токены
 │   │   ├── user.py                # Публичная модель пользователя
 │   │   └── chat.py                # Запросы и ответы LLM
 │   │
 │   ├── repositories/              # Репозитории (ТОЛЬКО SQL/ORM)
-│   │   ├── init.py
+│   │   ├── __init__.py
 │   │   ├── users.py               # Доступ к таблице users
 │   │   └── chat_messages.py       # Доступ к истории чатов
 │   │
 │   ├── services/                  # Внешние сервисы
-│   │   ├── init.py
+│   │   ├── __init__.py
 │   │   └── openrouter_client.py   # Клиент OpenRouter / LLM
 │   │
 │   ├── usecases/                  # Бизнес-логика приложения
-│   │   ├── init.py
+│   │   ├── __init__.py
 │   │   ├── auth.py                # Регистрация, логин, профиль
 │   │   └── chat.py                # Логика общения с LLM
 │   │
 │   └── api/                       # HTTP-слой (тонкие эндпоинты)
-│       ├── init.py
+│       ├── __init__.py
 │       ├── deps.py                # Dependency Injection
 │       ├── routes_auth.py         # /auth/*
 │       └── routes_chat.py         # /chat/*
@@ -104,7 +104,7 @@ uv pip install -r requirements.txt
 ## Настройка .env
 
 Скопируйте `.env.example` в `.env` и заполните `OPENROUTER_API_KEY`
-Модель заменена на доступную для аккаунта openai/gpt-oss-120b:free 
+Замените модель на доступную для аккаунта при необходимости
 
 ## Запуск
 
